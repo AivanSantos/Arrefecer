@@ -1,21 +1,24 @@
-
 import { Link } from "react-router-dom";
 import { Snowflake, Wind, Wrench, ArrowRight, ShoppingBag } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ServiceCard from "@/components/ServiceCard";
+import BrandSlider from "./BrandSlider";
 
 const ServicesSection = () => {
   return (
-    <section className="py-20 relative" id="services">
+    <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-arrefecer-600 font-medium">Nossos Serviços</span>
-          <h2 className="text-3xl font-bold mt-2 mb-4">Soluções Completas de Ar-Condicionado</h2>
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <h2 className="text-3xl font-bold mb-4">
+            Soluções Completas de Climatização
+          </h2>
           <p className="text-gray-600">
             Oferecemos um conjunto completo de serviços para garantir o melhor conforto térmico para sua casa ou negócio, com qualidade e profissionalismo.
           </p>
         </div>
-        
+
+        <BrandSlider />
+
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           <ServiceCard
             id="venda"

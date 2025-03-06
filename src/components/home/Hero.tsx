@@ -13,7 +13,7 @@ const Hero = () => {
           <div className="animate-fade-in-up">
             <Button asChild size="lg" className="bg-arrefecer-100 text-arrefecer-700 px-4 py-1 rounded-full text-sm font-medium inline-block mb-6 hover:bg-arrefecer-200">
               <Link to="/contact">
-                Solicite o seu orçamento
+                Olá, Seja Bem Vindo 
               </Link>
             </Button>
             
