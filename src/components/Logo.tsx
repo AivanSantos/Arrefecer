@@ -5,20 +5,13 @@ interface LogoProps {
   type?: "full" | "icon";
 }
 
-const Logo: React.FC<LogoProps> = ({ className = "", type = "full" }) => {
+const Logo: React.FC<LogoProps> = ({ className = "h-12 w-auto", type = "full" }) => {
   return (
     <div className={`flex items-center ${className}`}>
       <img 
-        src="/logo.svg" 
+        src="/logo.png" 
         alt="Arrefecer Logo" 
-        className="h-16 md:h-20 w-auto"
-        style={{
-          minWidth: '200px',
-          minHeight: '40px',
-          maxHeight: '80px',
-          width: 'auto',
-          objectFit: 'contain'
-        }}
+        className="h-full w-auto" 
       />
     </div>
   );
