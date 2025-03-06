@@ -11,10 +11,13 @@ const Logo: React.FC<LogoProps> = ({ className = "", type = "full" }) => {
       <img 
         src="/logo.svg" 
         alt="Arrefecer Logo" 
-        className="h-12 md:h-16 w-auto"
+        className="h-16 md:h-20 w-auto"
         style={{
-          minWidth: '150px',
-          maxHeight: '64px'
+          minWidth: '200px',
+          minHeight: '40px',
+          maxHeight: '80px',
+          width: 'auto',
+          objectFit: 'contain'
         }}
       />
     </div>
