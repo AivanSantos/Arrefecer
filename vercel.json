@@ -1,9 +1,10 @@
 {
   "routes": [
     {
-      "src": "/favicon.png",
+      "src": "/favicon.svg",
       "headers": {
-        "cache-control": "public, max-age=0, must-revalidate"
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-type": "image/svg+xml"
       }
     }
   ]
