@@ -9,6 +9,7 @@ import ServicesSection from "@/components/home/ServicesSection";
 import FeaturedProducts from "@/components/home/FeaturedProducts";
 import WhyChooseUs from "@/components/home/WhyChooseUs";
 import ContactCTA from "@/components/home/ContactCTA";
+import Testimonials from "@/components/Testimonials";
 
 const Index = () => {
   useEffect(() => {
@@ -31,6 +32,9 @@ const Index = () => {
       
       {/* Why Choose Us */}
       <WhyChooseUs />
+      
+      {/* Testimonials */}
+      <Testimonials />
       
       {/* Contact CTA Section */}
       <ContactCTA />
