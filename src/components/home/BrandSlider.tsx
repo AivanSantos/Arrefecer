@@ -5,27 +5,27 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 const brands = [
   {
     name: "Daikin",
-    image: "https://www.daikin.pt/content/dam/daikin-sites/dpt/logos/daikin-logo.png",
+    image: "https://upload.wikimedia.org/wikipedia/commons/0/05/DAIKIN_logo.svg",
   },
   {
     name: "Mitsubishi Electric",
-    image: "https://www.mitsubishielectric.pt/img/logo-mitsubishi-electric.png",
+    image: "https://upload.wikimedia.org/wikipedia/commons/b/b7/Mitsubishi-logo.png",
   },
   {
     name: "Samsung",
-    image: "https://images.samsung.com/is/image/samsung/assets/pt/about-us/brand/logo/mo/360_197_1.png",
+    image: "https://1000logos.net/wp-content/uploads/2017/06/Samsung-Logo-2.png",
   },
   {
     name: "LG",
-    image: "https://www.lg.com/lg5-common-gp/images/common/header/logo-b2c.jpg",
+    image: "https://upload.wikimedia.org/wikipedia/commons/8/8d/LG_logo_%282014%29.svg",
   },
   {
     name: "Carrier",
-    image: "https://www.carrier.com/carrier/en/worldwide/img/Carrier_Logo_Blue.png",
+    image: "https://logos-world.net/wp-content/uploads/2023/03/Gree-Logo.png",
   },
   {
     name: "Haier",
-    image: "https://www.haier.com/pt/static/image/logo.png",
+    image: "https://1000logos.net/wp-content/uploads/2017/12/Haier-Logo.png",
   }
 ];
 
