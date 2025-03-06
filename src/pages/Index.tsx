@@ -1,8 +1,6 @@
-
 import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import Testimonials from "@/components/Testimonials";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
 // Import refactored components
@@ -15,7 +13,7 @@ import ContactCTA from "@/components/home/ContactCTA";
 const Index = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "Arrefecer.com | Especialistas em Ar-Condicionado em Portugal";
+    document.title = "Arrefecer | Especialistas em Ar-Condicionado em Portugal";
   }, []);
 
   return (
@@ -33,9 +31,6 @@ const Index = () => {
       
       {/* Why Choose Us */}
       <WhyChooseUs />
-      
-      {/* Testimonials Section */}
-      <Testimonials />
       
       {/* Contact CTA Section */}
       <ContactCTA />

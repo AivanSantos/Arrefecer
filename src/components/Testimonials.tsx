@@ -1,4 +1,3 @@
-
 import { useState, useRef, useEffect } from "react";
 import { Star, ChevronLeft, ChevronRight, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -40,6 +39,21 @@ const testimonials = [
     text: "Já é a segunda vez que contrato a Arrefecer e não me arrependo. Profissionais de confiança e preço justo. Continuarei sendo cliente."
   }
 ];
+
+const RatingStars = ({ rating }: { rating: number }) => {
+  return (
+    <div className="flex gap-1">
+      {Array(5).fill(0).map((_, index) => (
+        <Star
+          key={index}
+          className={`h-4 w-4 ${
+            index < rating ? "text-yellow-400 fill-yellow-400" : "text-gray-300"
+          }`}
+        />
+      ))}
+    </div>
+  );
+};
 
 const Testimonials = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -91,108 +105,59 @@ const Testimonials = () => {
     }
   }, [activeIndex]);
 
-  const renderStars = (rating: number) => {
-    return Array(5)
-      .fill(0)
-      .map((_, index) => (
-        <Star
-          key={index}
-          className={`h-4 w-4 ${
-            index < rating ? "text-yellow-400 fill-yellow-400" : "text-gray-300"
-          }`}
-        />
-      ));
-  };
-
   return (
-    <div 
-      className="relative overflow-hidden py-12 px-4"
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
-      <div className="container mx-auto">
-        <div className="text-center mb-12 max-w-2xl mx-auto">
-          <h2 className="text-3xl font-bold mb-4">O que os nossos clientes dizem</h2>
-          <p className="text-gray-600">
-            Veja alguns depoimentos de clientes satisfeitos com nossos serviços de venda, instalação e manutenção de ar-condicionado.
-          </p>
-        </div>
-        
-        <div className="relative px-6">
-          <div 
-            ref={slideContainerRef}
-            className="overflow-hidden"
-          >
-            <div 
-              className="flex transition-transform duration-500 ease-in-out"
-              style={{ transform: `translateX(-${activeIndex * 100}%)` }}
+    <div className="flex flex-col items-center">
+      <div 
+        className="relative w-full max-w-4xl overflow-hidden"
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
+        <div
+          ref={slideContainerRef}
+          className="flex transition-transform duration-500 ease-in-out"
+          style={{
+            transform: `translateX(-${activeIndex * 100}%)`
+          }}
+        >
+          {testimonials.map((testimonial) => (
+            <div
+              key={testimonial.id}
+              className="w-full flex-shrink-0 px-4"
             >
-              {testimonials.map((item) => (
-                <div
-                  key={item.id}
-                  className="min-w-full px-4"
-                >
-                  <div className="glass rounded-xl p-8 h-full">
-                    <div className="flex flex-col h-full">
-                      <div className="flex items-center space-x-2 mb-2">
-                        {renderStars(item.rating)}
-                      </div>
-                      
-                      <p className="italic text-gray-700 mb-6 flex-grow">"{item.text}"</p>
-                      
-                      <div className="flex items-center mt-auto">
-                        <div className="bg-arrefecer-100 p-2 rounded-full mr-3">
-                          <User className="h-5 w-5 text-arrefecer-500" />
-                        </div>
-                        <div>
-                          <p className="font-semibold">{item.name}</p>
-                          <p className="text-gray-500 text-sm">{item.location}</p>
-                        </div>
-                      </div>
-                    </div>
+              <div className="bg-white p-6 rounded-lg shadow-lg">
+                <div className="flex items-center mb-4">
+                  <div className="bg-gray-200 rounded-full p-2 mr-3">
+                    <User className="h-6 w-6 text-gray-600" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold">{testimonial.name}</h3>
+                    <p className="text-sm text-gray-600">{testimonial.location}</p>
                   </div>
                 </div>
-              ))}
-            </div>
-          </div>
-          
-          <div className="flex justify-center mt-8">
-            <div className="flex items-center space-x-2">
-              <Button
-                variant="outline"
-                size="icon"
-                onClick={prevTestimonial}
-                className="rounded-full"
-              >
-                <ChevronLeft className="h-5 w-5" />
-              </Button>
-              
-              <div className="flex space-x-2">
-                {testimonials.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setActiveIndex(index)}
-                    className={`w-2 h-2 rounded-full transition-all ${
-                      activeIndex === index
-                        ? "bg-arrefecer-500 w-6"
-                        : "bg-gray-300"
-                    }`}
-                    aria-label={`Go to slide ${index + 1}`}
-                  />
-                ))}
+                <RatingStars rating={testimonial.rating} />
+                <p className="mt-4 text-gray-600">{testimonial.text}</p>
               </div>
-              
-              <Button
-                variant="outline"
-                size="icon"
-                onClick={nextTestimonial}
-                className="rounded-full"
-              >
-                <ChevronRight className="h-5 w-5" />
-              </Button>
             </div>
-          </div>
+          ))}
         </div>
+
+        <Button
+          variant="outline"
+          size="icon"
+          className="absolute left-0 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white"
+          onClick={prevTestimonial}
+        >
+          <ChevronLeft className="h-4 w-4" />
+        </Button>
+
+        <Button
+          variant="outline"
+          size="icon"
+          className="absolute right-0 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white"
+          onClick={nextTestimonial}
+        >
+          <ChevronRight className="h-4 w-4" />
+        </Button>
       </div>
     </div>
   );

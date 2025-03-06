@@ -1,10 +1,10 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Send } from "lucide-react";
+import { z } from "zod";
 
 const ContactForm = ({ compact = false }) => {
   const { toast } = useToast();
@@ -22,6 +22,15 @@ const ContactForm = ({ compact = false }) => {
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const onSubmit = async (data: z.infer<typeof formSchema>) => {
+    // Atualizar o email de destino
+    const emailData = {
+      to: "geral@arrefecer.com",
+      // ... resto da configuração do email
+    }
+    // ... resto do código
   };
 
   const handleSubmit = async (e: React.FormEvent) => {

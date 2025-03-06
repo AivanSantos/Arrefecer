@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin } from "lucide-react";
 import Logo from "./Logo";
@@ -127,8 +126,8 @@ const Footer = () => {
 
         <div className="border-t border-gray-200 mt-12 pt-8">
           <div className="flex flex-col md:flex-row items-center justify-between">
-            <p className="text-gray-500 text-sm">
-              &copy; {currentYear} Arrefecer.com. Todos os direitos reservados.
+            <p className="text-sm text-gray-500">
+              © {currentYear} Arrefecer. Todos os direitos reservados.
             </p>
             <div className="mt-4 md:mt-0 flex space-x-6">
               <Link to="/privacy-policy" className="text-gray-500 hover:text-arrefecer-500 text-sm transition-colors">

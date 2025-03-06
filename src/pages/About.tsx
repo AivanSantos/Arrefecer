@@ -1,4 +1,3 @@
-
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Shield, Award, Users, Zap, Clock, Smile } from "lucide-react";
@@ -21,45 +20,15 @@ const About = () => {
         {/* Hero Section */}
         <div className="bg-gradient-to-r from-arrefecer-600 to-blue-700 text-white py-16">
           <div className="container mx-auto px-4">
-            <h1 className="text-4xl font-bold mb-4">Sobre a Arrefecer.com</h1>
+            <h1 className="text-4xl font-bold mb-4">Sobre a Arrefecer</h1>
             <p className="max-w-2xl text-lg opacity-90">
-              Conheça nossa história, missão e compromisso com a excelência em soluções de ar-condicionado para todo Portugal.
+              Conheça nossa missão e compromisso com a excelência em soluções de ar-condicionado para todo Portugal.
             </p>
           </div>
         </div>
         
         {/* Our Story */}
-        <section className="py-16">
-          <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div>
-                <h2 className="text-3xl font-bold mb-6">Nossa História</h2>
-                <p className="text-gray-600 mb-4">
-                  A Arrefecer.com nasceu da paixão por proporcionar conforto térmico com qualidade e responsabilidade. 
-                  Fundada em 2010, começamos como uma pequena empresa familiar especializada em instalação de ar-condicionado 
-                  residencial na região de Lisboa.
-                </p>
-                <p className="text-gray-600 mb-4">
-                  Com o passar dos anos, expandimos nossos serviços para todo o território português, 
-                  conquistando a confiança de clientes residenciais e empresariais com nosso compromisso 
-                  com a excelência técnica e atendimento personalizado.
-                </p>
-                <p className="text-gray-600">
-                  Hoje, orgulhamo-nos de ser uma referência no mercado de climatização em Portugal, 
-                  oferecendo soluções completas que incluem venda, instalação, manutenção e pré-instalação 
-                  de sistemas de ar-condicionado para diversos ambientes e necessidades.
-                </p>
-              </div>
-              <div>
-                <img 
-                  src="https://images.unsplash.com/photo-1521791055366-0d553872125f?q=80&w=1974&auto=format&fit=crop"
-                  alt="Equipe Arrefecer" 
-                  className="rounded-lg shadow-lg w-full h-auto"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
+        
         
         {/* Mission and Values */}
         <section className="bg-gray-50 py-16">
@@ -113,7 +82,7 @@ const About = () => {
         <section className="py-16">
           <div className="container mx-auto px-4">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <h2 className="text-3xl font-bold mb-4">Por Que Escolher a Arrefecer.com?</h2>
+              <h2 className="text-3xl font-bold mb-4">Por Que Escolher a Arrefecer ?</h2>
               <p className="text-gray-600">
                 Descubra as razões que fazem de nós a escolha preferida para soluções de ar-condicionado em Portugal.
               </p>
@@ -205,6 +174,15 @@ const About = () => {
             <Button asChild size="lg" variant="secondary">
               <Link to="/contact">Fale Conosco</Link>
             </Button>
+          </div>
+        </section>
+
+        {/* Áreas de Atuação */}
+        <section className="py-16">
+          <div className="container mx-auto px-4">
+            <div className="text-center max-w-3xl mx-auto">
+              <h2 className="text-3xl font-bold mb-8">Áreas de Atuação</h2>
+            </div>
           </div>
         </section>
       </main>

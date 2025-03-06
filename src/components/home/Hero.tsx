@@ -11,12 +11,14 @@ const Hero = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="animate-fade-in-up">
-            <span className="bg-arrefecer-100 text-arrefecer-700 px-4 py-1 rounded-full text-sm font-medium inline-block mb-6">
-              #1 em Ar-Condicionado em Portugal
-            </span>
+            <Button asChild size="lg" className="bg-arrefecer-100 text-arrefecer-700 px-4 py-1 rounded-full text-sm font-medium inline-block mb-6 hover:bg-arrefecer-200">
+              <Link to="/contact">
+                Solicite o seu orçamento
+              </Link>
+            </Button>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-              Instale ou repare seu ar-condicionado com especialistas!
+              Soluções Especializadas em Climatização
             </h1>
             
             <p className="text-gray-600 text-lg mb-8 max-w-lg">
@@ -40,21 +42,21 @@ const Hero = () => {
             <div className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-4 md:gap-8">
               <div className="flex flex-col items-center text-center">
                 <div className="bg-white/80 rounded-full p-3 mb-3">
-                  <span className="text-arrefecer-700 font-bold text-xl">1000+</span>
+                  <span className="text-arrefecer-700 font-bold text-xl">750+</span>
                 </div>
                 <span className="text-sm text-gray-600">Instalações</span>
               </div>
               
               <div className="flex flex-col items-center text-center">
                 <div className="bg-white/80 rounded-full p-3 mb-3">
-                  <span className="text-arrefecer-700 font-bold text-xl">5000+</span>
+                  <span className="text-arrefecer-700 font-bold text-xl">1000+</span>
                 </div>
                 <span className="text-sm text-gray-600">Clientes</span>
               </div>
               
               <div className="flex flex-col items-center text-center">
                 <div className="bg-white/80 rounded-full p-3 mb-3">
-                  <span className="text-arrefecer-700 font-bold text-xl">10+</span>
+                  <span className="text-arrefecer-700 font-bold text-xl">4+</span>
                 </div>
                 <span className="text-sm text-gray-600">Anos</span>
               </div>
