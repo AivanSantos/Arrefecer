@@ -70,7 +70,7 @@ const WhyChooseUs = () => {
           <div className="relative">
             <div className="rounded-3xl overflow-hidden shadow-xl">
               <img 
-                src="https://images.unsplash.com/photo-1581275196840-bdf555ac54ef?q=80&w=1287&auto=format&fit=crop"
+                src="https://triider-prd-blog-files.s3.sa-east-1.amazonaws.com/wp-content/uploads/2018/01/13131009/tudo-sobre-ar-condicionado-profissionais-qualificados1.jpg"
                 alt="Técnico instalando ar-condicionado"
                 className="w-full h-full object-cover"
               />
