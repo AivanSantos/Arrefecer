@@ -1,3 +1,4 @@
+
 import React from "react";
 
 interface LogoProps {
@@ -9,10 +10,9 @@ const Logo: React.FC<LogoProps> = ({ className = "h-8 w-auto", type = "full" }) 
   return (
     <div className={`flex items-center ${className}`}>
       <img 
-        src="/logo.png"
+        src="/lovable-uploads/cf9106a7-02b0-4e9c-83bd-893f96e9c162.png" 
         alt="Arrefecer Logo" 
-        className="h-full w-auto"
-        style={{ filter: 'brightness(0) invert(13%) sepia(82%) saturate(1259%) hue-rotate(187deg) brightness(97%) contrast(98%)' }}
+        className="h-full w-auto" 
       />
     </div>
   );

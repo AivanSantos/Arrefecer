@@ -8,9 +8,7 @@ const ServicesSection = () => {
   return (
     <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
-        <BrandSlider />
-        
-        <div className="text-center max-w-3xl mx-auto mt-16 mb-12">
+        <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="text-3xl font-bold mb-4">
             Soluções Completas de Climatização
           </h2>
@@ -18,6 +16,8 @@ const ServicesSection = () => {
             Oferecemos um conjunto completo de serviços para garantir o melhor conforto térmico para sua casa ou negócio, com qualidade e profissionalismo.
           </p>
         </div>
+
+        <BrandSlider />
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           <ServiceCard
