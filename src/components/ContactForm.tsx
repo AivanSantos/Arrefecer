@@ -5,6 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Send } from "lucide-react";
 import { z } from "zod";
+import emailjs from '@emailjs/browser';
 
 const ContactForm = ({ compact = false }) => {
   const { toast } = useToast();
@@ -38,27 +39,32 @@ const ContactForm = ({ compact = false }) => {
     setIsSubmitting(true);
 
     try {
-      // Simulação de envio de formulário
-      console.log("Dados do formulário:", formData);
-      
-      // Aqui iria o código para enviar o e-mail (será implementado posteriormente)
-      // Em um caso real, chamaríamos uma API ou um serviço de e-mail
-      
-      await new Promise(resolve => setTimeout(resolve, 1000)); // Simulação de tempo de processamento
-      
-      toast({
-        title: "Formulário enviado com sucesso!",
-        description: "Em breve entraremos em contato consigo.",
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
       });
-      
-      // Limpar o formulário
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        service: "installation",
-        message: "",
-      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        toast({
+          title: "Formulário enviado com sucesso!",
+          description: "Em breve entraremos em contato consigo.",
+        });
+
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          service: "installation",
+          message: "",
+        });
+      } else {
+        throw new Error('Falha ao enviar email');
+      }
     } catch (error) {
       console.error("Erro ao enviar formulário:", error);
       toast({
