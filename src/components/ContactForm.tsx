@@ -8,25 +8,45 @@ import { Send } from "lucide-react";
 const ContactForm = ({ compact = false }) => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    service: "installation",
-    message: "",
-  });
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    const formData = new FormData(e.currentTarget);
+    
+    try {
+      const response = await fetch("https://formsubmit.co/geral@arrefecer.com", {
+        method: "POST",
+        body: formData,
+      });
+
+      if (response.ok) {
+        toast({
+          title: "Mensagem enviada com sucesso!",
+          description: "Entraremos em contacto consigo brevemente.",
+          variant: "default",
+        });
+        
+        // Limpar o formulário
+        (e.target as HTMLFormElement).reset();
+      } else {
+        throw new Error("Erro ao enviar mensagem");
+      }
+    } catch (error) {
+      toast({
+        title: "Erro ao enviar mensagem",
+        description: "Por favor, tente novamente mais tarde.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
     <form 
-      action="https://formsubmit.co/geral@arrefecer.com" 
-      method="POST"
+      onSubmit={handleSubmit}
       className={`space-y-4 ${compact ? "p-0" : "p-6 glass rounded-xl"}`}
     >
       {/* FormSubmit Configurações */}
@@ -92,8 +112,9 @@ const ContactForm = ({ compact = false }) => {
         required
       />
 
-      <Button type="submit" className="w-full">
-        <Send className="mr-2 h-4 w-4" /> Enviar Pedido
+      <Button type="submit" className="w-full" disabled={isSubmitting}>
+        <Send className="mr-2 h-4 w-4" />
+        {isSubmitting ? "A enviar..." : "Enviar Pedido"}
       </Button>
     </form>
   );
