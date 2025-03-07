@@ -30,11 +30,7 @@ const ContactForm = ({ compact = false }) => {
       className={`space-y-4 ${compact ? "p-0" : "p-6 glass rounded-xl"}`}
     >
       {/* FormSubmit Configurações */}
-      <input 
-        type="hidden" 
-        name="_next" 
-        value={window.location.origin + "/obrigado"}
-      />
+      <input type="hidden" name="_next" value="https://arrefecer.vercel.app/obrigado" />
       <input type="hidden" name="_subject" value="Nova Solicitação de Orçamento" />
       <input type="hidden" name="_template" value="table" />
       <input type="hidden" name="_captcha" value="false" />
