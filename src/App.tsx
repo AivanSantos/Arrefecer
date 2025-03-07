@@ -7,8 +7,8 @@ import Index from "./pages/Index";
 import Services from "./pages/Services";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import ThankYou from "./pages/ThankYou";
 import NotFound from "./pages/NotFound";
-import ThankYou from "./pages/obrigado";
 
 const queryClient = new QueryClient();
 
