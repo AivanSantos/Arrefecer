@@ -6,7 +6,6 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 // Import refactored components
 import Hero from "@/components/home/Hero";
 import ServicesSection from "@/components/home/ServicesSection";
-import FeaturedProducts from "@/components/home/FeaturedProducts";
 import WhyChooseUs from "@/components/home/WhyChooseUs";
 import ContactCTA from "@/components/home/ContactCTA";
 import Testimonials from "@/components/Testimonials";
@@ -26,9 +25,6 @@ const Index = () => {
       
       {/* Services Section */}
       <ServicesSection />
-      
-      {/* Featured Products */}
-      <FeaturedProducts />
       
       {/* Why Choose Us */}
       <WhyChooseUs />
