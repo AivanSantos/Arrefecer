@@ -67,7 +67,7 @@ const Services = () => {
               </div>
               <div className="order-1 md:order-2">
                 <img 
-                  src="https://images.unsplash.com/photo-1639254651746-51c9de638154?q=80&w=1974&auto=format&fit=crop"
+                  src="https://www.estadao.com.br/recomenda/wp-content/uploads/2023/10/Como-escolher-o-melhor-ar-condicionado-Conheca-5-modelos-que-se-destacam.jpg.webp"
                   alt="Venda de Equipamentos" 
                   className="rounded-lg shadow-lg w-full h-auto object-cover aspect-video"
                 />
