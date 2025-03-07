@@ -9,52 +9,19 @@ const ContactForm = ({ compact = false }) => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    const formData = new FormData(e.currentTarget);
-    
-    try {
-      const response = await fetch("https://formsubmit.co/geral@arrefecer.com", {
-        method: "POST",
-        body: formData,
-      });
-
-      if (response.ok) {
-        toast({
-          title: "Mensagem enviada com sucesso!",
-          description: "Entraremos em contacto consigo brevemente.",
-          variant: "default",
-        });
-        
-        // Limpar o formulário
-        (e.target as HTMLFormElement).reset();
-      } else {
-        throw new Error("Erro ao enviar mensagem");
-      }
-    } catch (error) {
-      toast({
-        title: "Erro ao enviar mensagem",
-        description: "Por favor, tente novamente mais tarde.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
   return (
     <form 
-      onSubmit={handleSubmit}
+      action="https://formsubmit.co/geral@arrefecer.com"
+      method="POST"
       className={`space-y-4 ${compact ? "p-0" : "p-6 glass rounded-xl"}`}
     >
       {/* FormSubmit Configurações */}
       <input type="hidden" name="_subject" value="Nova Solicitação de Orçamento" />
       <input type="hidden" name="_template" value="table" />
       <input type="hidden" name="_captcha" value="false" />
-      {/* Configuração para evitar redirecionamento */}
-      <input type="hidden" name="_next" value={window.location.href} />
+      <input type="hidden" name="_autoresponse" value="Recebemos a sua mensagem. Entraremos em contacto brevemente." />
+      {/* Configuração para retornar à mesma página */}
+      <input type="hidden" name="_next" value="https://arrefecer.com" />
 
       {!compact && (
         <h3 className="text-xl font-semibold mb-6">Solicite um Orçamento Gratuito</h3>
@@ -113,9 +80,9 @@ const ContactForm = ({ compact = false }) => {
         required
       />
 
-      <Button type="submit" className="w-full" disabled={isSubmitting}>
+      <Button type="submit" className="w-full">
         <Send className="mr-2 h-4 w-4" />
-        {isSubmitting ? "A enviar..." : "Enviar Pedido"}
+        Enviar Pedido
       </Button>
     </form>
   );
