@@ -11,11 +11,7 @@ const Hero = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="animate-fade-in-up">
-            <Button asChild size="lg" className="bg-arrefecer-100 text-arrefecer-700 px-4 py-1 rounded-full text-sm font-medium inline-block mb-6 hover:bg-arrefecer-200">
-              <Link to="/contact">
-                Olá, Seja Bem Vindo 
-              </Link>
-            </Button>
+            
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
               Soluções Especializadas em Climatização
