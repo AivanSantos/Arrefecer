@@ -1,9 +1,15 @@
-
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X, ShoppingCart, PhoneCall } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Logo from "./Logo";
+
+const navigation = [
+  { name: "Início", href: "/" },
+  { name: "Serviços", href: "/services" },
+  { name: "Sobre", href: "/about" },
+  { name: "Contacto", href: "/contact" },
+];
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -48,12 +54,6 @@ const Navbar = () => {
               Início
             </Link>
             <Link
-              to="/products"
-              className="text-foreground hover:text-arrefecer-700 font-medium transition-colors"
-            >
-              Loja
-            </Link>
-            <Link
               to="/services"
               className="text-foreground hover:text-arrefecer-700 font-medium transition-colors"
             >
@@ -81,14 +81,6 @@ const Navbar = () => {
               <PhoneCall className="w-4 h-4 mr-2" />
               <span>+351 962 827 946</span>
             </a>
-            <Link to="/cart">
-              <Button variant="outline" size="icon" className="relative">
-                <ShoppingCart className="h-5 w-5" />
-                <span className="absolute -top-2 -right-2 bg-arrefecer-700 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
-                  0
-                </span>
-              </Button>
-            </Link>
             <Button asChild className="bg-arrefecer-700 hover:bg-arrefecer-800">
               <Link to="/contact">Orçamento Grátis</Link>
             </Button>
@@ -125,13 +117,6 @@ const Navbar = () => {
               onClick={closeMenu}
             >
               Início
-            </Link>
-            <Link
-              to="/products"
-              className="text-foreground hover:text-arrefecer-700 font-medium transition-colors"
-              onClick={closeMenu}
-            >
-              Loja
             </Link>
             <Link
               to="/services"
