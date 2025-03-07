@@ -1,4 +1,3 @@
-
 import { useEffect } from "react";
 import { Phone, Mail, MapPin, MessageCircle, Clock } from "lucide-react";
 import Navbar from "@/components/Navbar";
@@ -113,50 +112,6 @@ const Contact = () => {
                 <ContactForm />
               </div>
             </div>
-          </div>
-        </section>
-        
-        {/* Map Section */}
-        <section className="bg-gray-50 py-16">
-          <div className="container mx-auto px-4">
-            <div className="text-center max-w-3xl mx-auto mb-12">
-              <h2 className="text-3xl font-bold mb-4">Áreas de Atuação</h2>
-              <p className="text-gray-600">
-                Prestamos serviços em todo Portugal, com atuação principal nas seguintes regiões:
-              </p>
-            </div>
-            
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
-              <div className="bg-white p-6 rounded-lg shadow">
-                <h3 className="font-semibold text-lg mb-2">Lisboa e Vale do Tejo</h3>
-                <p className="text-gray-600">
-                  Lisboa, Cascais, Sintra, Oeiras, Almada, Setúbal
-                </p>
-              </div>
-              
-              <div className="bg-white p-6 rounded-lg shadow">
-                <h3 className="font-semibold text-lg mb-2">Norte</h3>
-                <p className="text-gray-600">
-                  Porto, Braga, Guimarães, Viana do Castelo
-                </p>
-              </div>
-              
-              <div className="bg-white p-6 rounded-lg shadow">
-                <h3 className="font-semibold text-lg mb-2">Centro</h3>
-                <p className="text-gray-600">
-                  Coimbra, Aveiro, Leiria, Viseu
-                </p>
-              </div>
-              
-              <div className="bg-white p-6 rounded-lg shadow">
-                <h3 className="font-semibold text-lg mb-2">Sul</h3>
-                <p className="text-gray-600">
-                  Faro, Albufeira, Portimão, Lagos
-                </p>
-              </div>
-            </div>
-            
-           
           </div>
         </section>
       </main>
