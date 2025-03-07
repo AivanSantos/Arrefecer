@@ -20,8 +20,8 @@ const ContactForm = ({ compact = false }) => {
       <input type="hidden" name="_template" value="table" />
       <input type="hidden" name="_captcha" value="false" />
       <input type="hidden" name="_autoresponse" value="Recebemos a sua mensagem. Entraremos em contacto brevemente." />
-      {/* Configuração para retornar à mesma página */}
-      <input type="hidden" name="_next" value="https://arrefecer.com" />
+      {/* Configuração para retornar à página inicial */}
+      <input type="hidden" name="_next" value="https://arrefecer.com/" />
 
       {!compact && (
         <h3 className="text-xl font-semibold mb-6">Solicite um Orçamento Gratuito</h3>
