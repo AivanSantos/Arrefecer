@@ -149,7 +149,7 @@ const Services = () => {
               </div>
               <div className="order-1 md:order-2">
                 <img 
-                  src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=1974&auto=format&fit=crop"
+                  src="https://img.freepik.com/fotos-gratis/close-up-do-trabalhador-operando-uma-maquina-industrial-em-uma-fabrica_637285-4184.jpg?t=st=1741320018~exp=1741323618~hmac=78f44d64ef54b6a6046655c6117bae5e481c6c503a8e21fbc408a6766d51952f&w=1060"
                   alt="Manutenção de Ar-Condicionado" 
                   className="rounded-lg shadow-lg w-full h-auto object-cover aspect-video"
                 />
