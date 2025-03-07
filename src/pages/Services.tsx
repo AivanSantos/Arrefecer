@@ -77,7 +77,7 @@ const Services = () => {
             <div className="grid md:grid-cols-2 gap-12 items-center mb-24" id="instalacao">
               <div>
                 <img 
-                  src=""
+                  src="https://lh3.googleusercontent.com/p/AF1QipPkjAmD863QFREhfUhIBNnGPzuwktTU16nVF2eD=s680-w680-h510"
                   alt="Instalação de Ar-Condicionado" 
                   className="rounded-lg shadow-lg w-full h-auto object-cover aspect-video"
                 />
