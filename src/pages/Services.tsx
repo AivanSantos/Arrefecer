@@ -77,7 +77,7 @@ const Services = () => {
             <div className="grid md:grid-cols-2 gap-12 items-center mb-24" id="instalacao">
               <div>
                 <img 
-                  src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=1974&auto=format&fit=crop"
+                  src=""
                   alt="Instalação de Ar-Condicionado" 
                   className="rounded-lg shadow-lg w-full h-auto object-cover aspect-video"
                 />
@@ -159,7 +159,7 @@ const Services = () => {
             <div className="grid md:grid-cols-2 gap-12 items-center" id="pre-instalacao">
               <div>
                 <img 
-                  src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=1974&auto=format&fit=crop"
+                  src="https://fluxoconsultoria.poli.ufrj.br/wp-content/uploads/2023/05/image-4.webp"
                   alt="Pré-Instalação de Ar-Condicionado" 
                   className="rounded-lg shadow-lg w-full h-auto object-cover aspect-video"
                 />
