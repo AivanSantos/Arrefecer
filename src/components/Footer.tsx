@@ -5,6 +5,25 @@ import Logo from "./Logo";
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
+  const navigation = {
+    main: [
+      { name: "Início", href: "/" },
+      { name: "Serviços", href: "/services" },
+      { name: "Sobre", href: "/about" },
+      { name: "Contacto", href: "/contact" },
+    ],
+    services: [
+      { name: "Instalação", href: "/services#installation" },
+      { name: "Manutenção", href: "/services#maintenance" },
+      { name: "Reparação", href: "/services#repair" },
+      { name: "Pré-Instalação", href: "/services#pre-installation" },
+    ],
+    legal: [
+      { name: "Política de Privacidade", href: "/privacy" },
+      { name: "Termos e Condições", href: "/terms" },
+    ],
+  };
+
   return (
     <footer className="bg-gray-50 pt-16 pb-8">
       <div className="container mx-auto px-4">
@@ -48,11 +67,6 @@ const Footer = () => {
               <li>
                 <Link to="/" className="text-gray-600 hover:text-arrefecer-500 transition-colors">
                   Início
-                </Link>
-              </li>
-              <li>
-                <Link to="/products" className="text-gray-600 hover:text-arrefecer-500 transition-colors">
-                  Loja
                 </Link>
               </li>
               <li>
