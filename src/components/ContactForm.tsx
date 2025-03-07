@@ -39,6 +39,9 @@ const ContactForm = ({ compact = false }) => {
     setIsSubmitting(true);
 
     try {
+      // Adicionar logs para debug
+      console.log('Enviando dados:', formData);
+
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
@@ -47,23 +50,32 @@ const ContactForm = ({ compact = false }) => {
         body: JSON.stringify(formData)
       });
 
-      const data = await response.json();
+      // Verificar se a resposta é JSON
+      const contentType = response.headers.get("content-type");
+      if (contentType && contentType.indexOf("application/json") !== -1) {
+        const data = await response.json();
+        
+        if (data.success) {
+          toast({
+            title: "Formulário enviado com sucesso!",
+            description: "Em breve entraremos em contato consigo.",
+          });
 
-      if (data.success) {
-        toast({
-          title: "Formulário enviado com sucesso!",
-          description: "Em breve entraremos em contato consigo.",
-        });
-
-        setFormData({
-          name: "",
-          email: "",
-          phone: "",
-          service: "installation",
-          message: "",
-        });
+          setFormData({
+            name: "",
+            email: "",
+            phone: "",
+            service: "installation",
+            message: "",
+          });
+        } else {
+          throw new Error(data.error || 'Falha ao enviar email');
+        }
       } else {
-        throw new Error('Falha ao enviar email');
+        // Se não for JSON, ler como texto
+        const text = await response.text();
+        console.error('Resposta não-JSON:', text);
+        throw new Error('Resposta inválida do servidor');
       }
     } catch (error) {
       console.error("Erro ao enviar formulário:", error);
