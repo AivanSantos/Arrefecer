@@ -27,19 +27,17 @@
     }
   ],
   "rewrites": [
-    { 
+    {
       "source": "/((?!api/|_next/|_static/|_vercel|[\\w-]+\\.\\w+).*)",
-      "destination": "/index.html"
+      "destination": "/index.html",
+      "statusCode": 200
     }
   ],
-  "routes": [
-    { 
-      "handle": "filesystem"
-    },
+  "redirects": [
     {
-      "src": "/(.*)",
-      "status": 404,
-      "dest": "/404.html"
+      "source": "/404",
+      "destination": "/404.html",
+      "statusCode": 404
     }
   ]
 } 
