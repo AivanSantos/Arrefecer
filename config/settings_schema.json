@@ -1,0 +1,14 @@
+{
+  "current": {
+    "logo": "",
+    "colors": {
+      "primary": "#1E3A8A",
+      "secondary": "#2563EB",
+      "accent": "#60A5FA"
+    },
+    "typography": {
+      "font_heading": "Inter",
+      "font_body": "Inter"
+    }
+  }
+} 

@@ -1,0 +1,30 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "heading": "Ar Condicionado em Portugal",
+        "subheading": "Instalação e Manutenção"
+      }
+    },
+    "services": {
+      "type": "services-grid",
+      "blocks": [
+        {
+          "type": "service",
+          "settings": {
+            "title": "Instalação",
+            "description": "Instalação profissional de ar condicionado"
+          }
+        }
+      ]
+    },
+    "contact": {
+      "type": "contact-form",
+      "settings": {
+        "compact": false
+      }
+    }
+  },
+  "order": ["hero", "services", "contact"]
+} 

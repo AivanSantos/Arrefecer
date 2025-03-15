@@ -1,0 +1,17 @@
+{
+  "contact": {
+    "form": {
+      "name": "Nome completo *",
+      "email": "Email *",
+      "phone": "Telefone *",
+      "message": "Mensagem *",
+      "send": "Enviar Pedido",
+      "post_success": "Mensagem enviada com sucesso! Entraremos em contacto brevemente.",
+      "service_installation": "Instalação",
+      "service_maintenance": "Manutenção",
+      "service_pre_installation": "Pré-Instalação",
+      "service_purchase": "Compra de Equipamento",
+      "service_other": "Outro Serviço"
+    }
+  }
+} 

@@ -1,0 +1,75 @@
+<div class="space-y-4 {% if section.settings.compact %}p-0{% else %}p-6 glass rounded-xl{% endif %}">
+  {% form 'contact' %}
+    {% if form.posted_successfully? %}
+      <div class="bg-green-50 p-4 rounded-md">
+        <p class="text-green-800">{{ 'contact.form.post_success' | t }}</p>
+      </div>
+    {% endif %}
+
+    {% if form.errors %}
+      <div class="bg-red-50 p-4 rounded-md">
+        <p class="text-red-800">{{ form.errors | default_errors }}</p>
+      </div>
+    {% endif %}
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div>
+        <input
+          type="text"
+          name="contact[name]"
+          class="w-full p-2 border rounded-md"
+          placeholder="{{ 'contact.form.name' | t }}"
+          required
+        >
+      </div>
+      <div>
+        <input
+          type="email"
+          name="contact[email]"
+          class="w-full p-2 border rounded-md"
+          placeholder="{{ 'contact.form.email' | t }}"
+          required
+        >
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div>
+        <input
+          type="tel"
+          name="contact[phone]"
+          class="w-full p-2 border rounded-md"
+          placeholder="{{ 'contact.form.phone' | t }}"
+          required
+        >
+      </div>
+      <div>
+        <select
+          name="contact[service]"
+          class="w-full p-2 border rounded-md"
+          required
+        >
+          <option value="installation">{{ 'contact.form.service_installation' | t }}</option>
+          <option value="maintenance">{{ 'contact.form.service_maintenance' | t }}</option>
+          <option value="pre-installation">{{ 'contact.form.service_pre_installation' | t }}</option>
+          <option value="purchase">{{ 'contact.form.service_purchase' | t }}</option>
+          <option value="other">{{ 'contact.form.service_other' | t }}</option>
+        </select>
+      </div>
+    </div>
+
+    <textarea
+      name="contact[body]"
+      class="w-full p-2 border rounded-md min-h-[120px]"
+      placeholder="{{ 'contact.form.message' | t }}"
+      required
+    ></textarea>
+
+    <button
+      type="submit"
+      class="w-full bg-arrefecer-600 text-white py-2 px-4 rounded-md hover:bg-arrefecer-700"
+    >
+      {{ 'contact.form.send' | t }}
+    </button>
+  {% endform %}
+</div> 
