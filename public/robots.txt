@@ -1,9 +1,19 @@
 User-agent: *
 Allow: /
-Disallow: /api/
-Disallow: /admin/
-Disallow: /checkout/
-Disallow: /cart/
 
 # Sitemap
 Sitemap: https://arrefecer.com/sitemap.xml
+
+# Diretórios e arquivos para não indexar
+Disallow: /api/
+Disallow: /_next/
+Disallow: /_vercel/
+Disallow: /404
+
+# Permitir recursos estáticos
+Allow: /*.js$
+Allow: /*.css$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.svg$
+Allow: /*.ico$
